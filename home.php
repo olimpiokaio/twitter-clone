@@ -36,12 +36,24 @@
 						data: $('#form_tweet').serialize(),
 						success: function(data){
 							$('#texto_tweet').val('');
-							alert('Tweete incluido com sucesso!!!');
+							atualiza_tweet();
 						}
 					})
 				}
-
 			})
+
+			function atualiza_tweet(){
+				//carregar os tweets
+
+				$.ajax({
+					url: 'get_tweet.php',
+					success: function(data){
+						$('#tweets').html(data);
+					}
+				})
+			}
+
+			atualiza_tweet();
 
 		});
 
@@ -49,7 +61,6 @@
 	</head>
 
 	<body>
-
 		<!-- Static navbar -->
 	    <nav class="navbar navbar-default navbar-static-top">
 	      <div class="container">
@@ -70,7 +81,6 @@
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </nav>
-
 
 	    <div class="container">
 
@@ -104,6 +114,9 @@
 	    				</form>
 	    			</div>
 	    		</div>
+
+	    		<div id="tweets" class="list-group"></div>
+
 			</div>
 
 			<div class="col-md-3">
@@ -115,7 +128,6 @@
 			</div>
 
 		</div>
-
 
 	    </div>
 	
