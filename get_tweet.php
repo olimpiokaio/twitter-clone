@@ -21,10 +21,8 @@
 
 	if( $resultado_id ){
 
-		$resposta = array();
-
 		while( $registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC) ){
-			echo '<a href="#" class="list-group-intem">';
+			echo '<a href="#" class="list-group-item">';
 				echo '<h4 class="list-group-head">'.$registro['usuario'].'<small> - '.$registro['data_inclusao_formatada'].'</small></h4>';
 				echo '<p class="list-group-item-text">'.$registro['tweet'].'</p>';
 			echo '</a>';

@@ -1,17 +1,15 @@
 <?php
-
 	session_start();
-
 	if(!isset($_SESSION['usuario'])){
 		header('location: index.php?erro=1');
 	}	
-
 ?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-
+		
 		<title>Twitter clone</title>
 		
 		<!-- jquery - link cdn -->
@@ -122,7 +120,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4><a href="#">Procurar por pessoas</a></h4>
+						<h4><a href="Procurar_pessoas.php">Procurar por pessoas</a></h4>
 					</div>
 				</div>
 			</div>
